@@ -128,8 +128,6 @@ Simulación y comparación
 
 El proyecto se desarrolló utilizando:
 
-En particular, se busca:
-
 - Python
 - Jupyter Notebook
 - Google Colab
