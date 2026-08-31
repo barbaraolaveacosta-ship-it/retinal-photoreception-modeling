@@ -96,18 +96,38 @@ for angulo, (start_time, end_time) in tiempos_por_angulo.items():
     print(f"  {'✅ Aceptado' if ad_result.statistic < critico_5 else '❌ Rechazado'}\n")
 
 # ============================================================
-# Test de distribución temporal
+# Test de distribución temporal / mejores distribuciones
 # ============================================================
 
-# ============================================================
-# Búsqueda de mejores distribuciones
-# ============================================================
+# Ángulo y bloques asociados
+angulo, bloque_inicio, bloque_fin =   0, 41128708, 42122545
+#angulo, bloque_inicio, bloque_fin =  45, 42128580, 43425195
+#angulo, bloque_inicio, bloque_fin =  90, 43431231, 44425067
+#angulo, bloque_inicio, bloque_fin = 135, 44431103, 45728052
+#angulo, bloque_inicio, bloque_fin = 180, 45734088, 46727924
+#angulo, bloque_inicio, bloque_fin = 225, 46733960, 48030574
+#angulo, bloque_inicio, bloque_fin = 270, 48036610, 49030446
+#angulo, bloque_inicio, bloque_fin = 315, 49036482, 50333767
 
-# ============================================================
-# Análisis de censura
-# ============================================================
+tiempos_activacion = tiempos_de_activacion_spikes(
+    grado=angulo,
+    start_time=bloque_inicio,
+    end_time=bloque_fin,
+)
 
-# ============================================================
-# Evaluación de las hipótesis
-# ============================================================
+for celula, datos in tiempos_activacion.items():
+    if len(datos) < 2:
+        continue  # Evitar errores por falta de datos
+    print(f"\n--- Célula {celula} ---")
+    stat, p_value, loc, scale = test_exponencial(datos)
+    print(f"Test exponencial: p-value = {p_value}")
 
+    if p_value < 0.05:
+        print("No parece ser exponencial.")
+        mejor_dist, mejor_aic, mejor_params, mejor_p = buscar_mejor_distribucion(datos)
+        print(f"Mejor distribución: {mejor_dist} (AIC = {mejor_aic:.2f}) (p-value = {mejor_p})")
+        graficar_ajuste(datos, mejor_dist, mejor_params)
+    else:
+        print("Es compatible con una distribución exponencial.")
+        graficar_ajuste(datos, 'expon', (loc, scale))
+        
