@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Data files
+data/raw/*.hdf5
+data/raw/*.h5
+data/raw/*.xlsx
+
+# Generated results
+results/videos/*.mp4
+results/videos/*.gif
+
+# Operating system
+.DS_Store
+Thumbs.db
