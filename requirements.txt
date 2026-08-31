@@ -1,0 +1,9 @@
+h5py
+pandas
+numpy
+matplotlib
+scipy
+seaborn
+scikit-learn
+networkx
+jupyter
