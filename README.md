@@ -123,24 +123,26 @@ Simulación y comparación
 
 ---
 
-## Metodología
+## Herramientas utilizadas
 
 
 El proyecto se desarrolló utilizando:
 
--Python
--Jupyter Notebook
--Google Colab
--HDF5
--Excel
+En particular, se busca:
 
+- Python
+- Jupyter Notebook
+- Google Colab
+- HDF5
+- Excel
 
 Las principales bibliotecas incluyen:
 
--NumPy
--Pandas
--Matplotlib
--SciPy
--h5py
--scikit-learn
--NetworkX
+- NumPy
+- Pandas
+- Matplotlib
+- SciPy
+- h5py
+- scikit-learn
+- NetworkX
+
