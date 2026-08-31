@@ -119,6 +119,7 @@ Tests de bondad de ajuste
 Modelo con memoria
         ↓
 Simulación y comparación
+```
 
 ---
 
@@ -127,19 +128,19 @@ Simulación y comparación
 
 El proyecto se desarrolló utilizando:
 
-Python
-Jupyter Notebook
-Google Colab
-HDF5
-Excel
+-Python
+-Jupyter Notebook
+-Google Colab
+-HDF5
+-Excel
 
 
 Las principales bibliotecas incluyen:
 
-NumPy
-Pandas
-Matplotlib
-SciPy
-h5py
-scikit-learn
-NetworkX
+-NumPy
+-Pandas
+-Matplotlib
+-SciPy
+-h5py
+-scikit-learn
+-NetworkX
